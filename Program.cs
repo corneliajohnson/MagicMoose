@@ -11,7 +11,7 @@ namespace MagicMoose
       MooseSays("I'm the Magic Moose. Ask Me Anything!");
       string question = Console.ReadLine();
       MooseSays(RandomAnswer());
-      ContinueQuestion(question);
+      ContinueQuestion();
     }
 
     static void MooseSays(string message)
@@ -57,13 +57,20 @@ namespace MagicMoose
       return answers[generateRandom];
     }
 
-    static void ContinueQuestion(string userQuestion)
+    static void ContinueQuestion()
     {
-      while (!string.IsNullOrEmpty(userQuestion))
+      while (true)
       {
         MooseSays("Ask me more");
         string question = Console.ReadLine();
-        MooseSays(RandomAnswer());
+        if (!string.IsNullOrEmpty(question))
+        {
+          MooseSays(RandomAnswer());
+        }
+        else
+        {
+          Environment.Exit(-1);
+        }
       }
     }
   }
