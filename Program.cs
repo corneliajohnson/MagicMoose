@@ -8,7 +8,7 @@ namespace MagicMoose
     static void Main(string[] args)
     {
       // Let the moose speak!
-      MooseSays("I'm the Magic Moose. Ask Me Anything!");
+      MooseSays("I'm the Magic Moose. Ask Me Anything! (must ask at lease one question)");
       string question = Console.ReadLine();
       MooseSays(RandomAnswer());
       ContinueQuestion();
@@ -61,7 +61,7 @@ namespace MagicMoose
     {
       while (true)
       {
-        MooseSays("Ask me more");
+        MooseSays("Ask me more or press enter to exit");
         string question = Console.ReadLine();
         if (!string.IsNullOrEmpty(question))
         {
